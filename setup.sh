@@ -14,4 +14,14 @@ if ! command -v rcup > /dev/null; then
 	sudo apt-get install -qy rcm
 fi
 
-env RCRC="$HOME/dotfiles/rcrc" rcup
+dotfiles_path="$HOME/.dotfiles"
+
+if [ -n "${CODESPACES+set}" ]; then
+	dotfiles_path="/workspaces/.codespaces/.persistedshare/dotfiles"
+	echo "DOTFILES_DIRS=\"$dotfiles_path\"" >> rcrc
+
+	rm "$HOME/.zshrc"
+	rm "$HOME/.zprofile"
+fi
+
+RCRC="$dotfiles_path/rcrc" rcup
