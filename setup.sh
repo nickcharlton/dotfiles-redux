@@ -2,16 +2,20 @@
 
 set -e
 
-sudo apt-get -q update
+kernel=$(uname -s)
 
-if ! expr "$SHELL" : ".*zsh" 1>/dev/null; then
-	sudo apt-get install -qy zsh
+if [ "$kernel" = "Linux" ]; then
+	sudo apt-get -q update
 
-	sudo chsh -s "$(which zsh)" "$(whoami)"
-fi
+	if ! expr "$SHELL" : ".*zsh" 1>/dev/null; then
+		sudo apt-get install -qy zsh
 
-if ! command -v rcup > /dev/null; then
-	sudo apt-get install -qy rcm
+		sudo chsh -s "$(which zsh)" "$(whoami)"
+	fi
+
+	if ! command -v rcup > /dev/null; then
+		sudo apt-get install -qy rcm
+	fi
 fi
 
 dotfiles_path="$HOME/.dotfiles"
