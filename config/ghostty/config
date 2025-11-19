@@ -1,0 +1,27 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+
+palette = 0=#4d4d4d
+palette = 1=#f16d86
+palette = 2=#09cd7e
+palette = 3=#f5f17a
+palette = 4=#3182e0
+palette = 5=#ff78a2
+palette = 6=#09c87a
+palette = 7=#fcfcfc
+palette = 8=#808080
+palette = 9=#f12d52
+palette = 10=#0ae78d
+palette = 11=#fffc67
+palette = 12=#6096ff
+palette = 13=#ff2b7d
+palette = 14=#0ae78d
+palette = 15=#ffffff
+background = #192330
+foreground = #e6e5e5
+cursor-color = #e6e5e5
+cursor-text = #ffffff
+selection-background = #adbdd0
+selection-foreground = #000000
+
+macos-non-native-fullscreen = visible-menu
