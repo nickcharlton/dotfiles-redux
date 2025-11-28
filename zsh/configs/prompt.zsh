@@ -57,5 +57,10 @@ function precmd {
   vcs_info
 }
 
+# jobs
+prompt_job_count() {
+  print "%(1j.[%j] .)"
+}
+
 setopt prompt_subst
-PROMPT='[$(prompt_shortened_path)$(prompt_git_status)]%# '
+PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)]%# '
