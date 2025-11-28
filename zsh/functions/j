@@ -1,0 +1,25 @@
+# List current shell's jobs
+#
+# 1-9: bring job to foreground
+# b1-b9: put job into background
+# 0: cancel
+#
+# https://codeberg.org/selfawaresoup/configurations/src/branch/main/bash_includes/functions.sh
+j() {
+  if [[ -z $(jobs) ]]; then
+    echo "0 jobs"
+  else
+    jobs -l
+    CMD="fg"
+    read -n1 CH
+    if [[ "$CH" == "b" ]]; then
+      CMD="bg"
+      read -n1 CH
+    fi
+    echo
+    if [[ "$CH" != "0" ]]; then
+      $CMD "%$CH"
+    fi
+  fi
+
+}
