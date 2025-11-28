@@ -1,6 +1,8 @@
+#
+# Configure the prompt
+#
+
 # colours
-# Wrapped so they're reset properly and easier to read
-# Available: green, magenta, red, cyan, blue, yellow.
 prompt_color() {
   [[ -n "$1" ]] && print "%{$fg[$2]%}$1%{$reset_color%}"
 }
@@ -47,12 +49,10 @@ zstyle ':vcs_info:*' formats "${branch_format}"
 zstyle ':vcs_info:*' actionformats "${action_format}"
 
 prompt_git_status() {
-  # vcs_info_msg_0_ is set by the `zstyle vcs_info` directives
   local colored_branch_name="$vcs_info_msg_0_"
   prompt_spaced "$colored_branch_name"
 }
 
-# before every command, load the git status
 function precmd {
   vcs_info
 }
