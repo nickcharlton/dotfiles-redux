@@ -16,6 +16,9 @@ if [ "$kernel" = "Linux" ]; then
 	if ! command -v rcup > /dev/null; then
 		sudo apt-get install -qy rcm
 	fi
+
+	# pull in additional tools?
+	sudo apt-get install zsh-syntax-highlighting zsh-autosuggestions
 fi
 
 dotfiles_path="$HOME/.dotfiles"
