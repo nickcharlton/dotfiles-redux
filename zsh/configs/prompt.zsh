@@ -58,9 +58,7 @@ function precmd {
 }
 
 # jobs
-prompt_job_count() {
-  print "$(prompt_blue "%(1j.[%j] .)")""
-}
+prompt_job_count() { print "$(prompt_blue "%(1j.[%j] .)")" }
 
 setopt prompt_subst
 PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)]%# '
