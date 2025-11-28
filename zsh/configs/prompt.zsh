@@ -59,7 +59,7 @@ function precmd {
 
 # jobs
 prompt_job_count() {
-  print "%(1j.[%j] .)"
+  print "$(prompt_blue "%(1j.[%j] .)")""
 }
 
 setopt prompt_subst
