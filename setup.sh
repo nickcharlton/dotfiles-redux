@@ -22,6 +22,7 @@ if [ -n "${CODESPACES+set}" ]; then
 
 	rm "$HOME/.zshrc"
 	rm "$HOME/.zprofile"
+	rm "$HOME/.gitconfig"
 fi
 
 RCRC="$dotfiles_path/rcrc" rcup
