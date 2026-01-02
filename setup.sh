@@ -16,6 +16,8 @@ if [ "$kernel" = "Linux" ]; then
 	if ! command -v rcup > /dev/null; then
 		sudo apt-get install -qy rcm
 	fi
+
+	sudo apt-get install -qy neovim python3-pynvim
 fi
 
 dotfiles_path="$HOME/.dotfiles"
