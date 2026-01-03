@@ -31,4 +31,4 @@ if [ -n "${CODESPACES+set}" ]; then
 	rm "$HOME/.gitconfig"
 fi
 
-RCRC="$dotfiles_path/rcrc" rcup
+RCRC="$dotfiles_path/rcrc" rcup -v
