@@ -21,6 +21,18 @@ local add = require("mini.deps").add
 add("mason-org/mason.nvim")
 require("mason").setup()
 
+-- nvim-treesitter
+add({
+  source = "nvim-treesitter/nvim-treesitter",
+  checkout = "master"
+})
+require("nvim-treesitter.install").prefer_git = true
+require("nvim-treesitter.configs").setup({
+  ensure_installed = "all",
+  ignore_install = { "ipkg" },
+  highlight = { enable = true }
+})
+
 -- keymaps
 local insert = "i"
 local normal = "n"
