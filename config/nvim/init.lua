@@ -13,6 +13,14 @@ vim.opt.splitright = true
 vim.opt.tabstop = 2
 vim.opt.undofile = true
 
+-- plugins
+require("mini.deps").setup()
+local add = require("mini.deps").add
+
+-- mason
+add("mason-org/mason.nvim")
+require("mason").setup()
+
 -- keymaps
 local insert = "i"
 local normal = "n"

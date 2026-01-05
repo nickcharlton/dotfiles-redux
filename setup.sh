@@ -32,3 +32,9 @@ if [ -n "${CODESPACES+set}" ]; then
 fi
 
 RCRC="$dotfiles_path/rcrc" rcup -v
+
+mini_nvim_path="$HOME/.local/share/nvim/site/pack/deps/start/mini.nvim"
+
+if [ ! -d "$mini_nvim_path" ]; then
+	git clone --filter=blob:none git@github.com:nvim-mini/mini.nvim.git "$mini_nvim_path"
+fi
