@@ -8,6 +8,7 @@ vim.opt.list = true
 vim.opt.number = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.signcolumn = "yes"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 2
@@ -20,6 +21,22 @@ local add = require("mini.deps").add
 -- mason
 add("mason-org/mason.nvim")
 require("mason").setup()
+
+-- language servers
+add("neovim/nvim-lspconfig")
+vim.lsp.enable({ "lua_ls" })
+vim.diagnostic.config({
+  virtual_text = { current_line = true },
+  severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✘',
+      [vim.diagnostic.severity.WARN] = '▲',
+      [vim.diagnostic.severity.HINT] = '⚑',
+      [vim.diagnostic.severity.INFO] = '»',
+    }
+  }
+})
 
 -- nvim-treesitter
 add({
@@ -78,4 +95,14 @@ vim.keymap.set(normal, "vv", "<C-W>v", {
 vim.keymap.set(normal, "<Leader><Leader>", "<C-^>", {
   desc = "Jump to alternate file",
   noremap = true,
+})
+
+vim.keymap.set(normal, "<leader>d", vim.diagnostic.open_float, {
+  desc = "Show line diagnostic panel with <leader>d",
+  noremap = true
+})
+
+vim.keymap.set(normal, "<leader>l", vim.diagnostic.setloclist, {
+  desc = "Show list of diagnostics with <leader>l",
+  noremap = true
 })
