@@ -1,4 +1,9 @@
 #
+# nvim
+#
+alias vim="nvim"
+
+#
 # Git
 #
 alias gws='git status -sb'

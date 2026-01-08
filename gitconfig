@@ -6,6 +6,7 @@
 [color]
   ui = auto
 [core]
+  editor = $EDITOR
   excludesfile = ~/.gitignore
 [push]
   default = current
