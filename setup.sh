@@ -17,7 +17,7 @@ if [ "$kernel" = "Linux" ]; then
 		sudo apt-get install -qy rcm
 	fi
 
-	sudo apt-get install -qy neovim python3-pynvim
+	sudo apt-get install -qy neovim python3-pynvim tree tig
 fi
 
 dotfiles_path="$HOME/.dotfiles"
