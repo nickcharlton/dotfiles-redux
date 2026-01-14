@@ -106,3 +106,6 @@ vim.keymap.set(normal, "<leader>l", vim.diagnostic.setloclist, {
   desc = "Show list of diagnostics with <leader>l",
   noremap = true
 })
+
+-- color scheme
+vim.cmd.colorscheme("ansi")
