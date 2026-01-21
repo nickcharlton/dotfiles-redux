@@ -18,6 +18,12 @@ if [ "$kernel" = "Linux" ]; then
 	fi
 
 	sudo apt-get install -qy neovim python3-pynvim tree tig
+
+	# Fix for Ghostty Terminfo
+	if [ ! -f "/usr/share/terminfo/x/xterm-ghostty" ]; then
+		sudo apt-get install -qy ncurses-term
+		sudo ln -s /usr/share/terminfo/g/ghostty /usr/share/terminfo/x/xterm-ghostty
+	fi
 fi
 
 dotfiles_path="$HOME/.dotfiles"
