@@ -50,6 +50,11 @@ require("nvim-treesitter.configs").setup({
   highlight = { enable = true }
 })
 
+add({
+  source = "nvim-telescope/telescope.nvim",
+  depends = { "nvim-lua/plenary.nvim" }
+})
+
 -- keymaps
 local insert = "i"
 local normal = "n"
@@ -105,6 +110,14 @@ vim.keymap.set(normal, "<leader>d", vim.diagnostic.open_float, {
 vim.keymap.set(normal, "<leader>l", vim.diagnostic.setloclist, {
   desc = "Show list of diagnostics with <leader>l",
   noremap = true
+})
+
+local telescope = require('telescope.builtin')
+vim.keymap.set(normal, "<leader>ff", telescope.find_files, {
+  desc = "Telescope find files"
+})
+vim.keymap.set(normal, "<leader>fg", telescope.live_grep, {
+  desc = "Telescope live grep"
 })
 
 -- color scheme
