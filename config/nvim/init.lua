@@ -55,6 +55,9 @@ add({
   depends = { "nvim-lua/plenary.nvim" }
 })
 
+add("lewis6991/gitsigns.nvim")
+require('gitsigns').setup()
+
 -- keymaps
 local insert = "i"
 local normal = "n"

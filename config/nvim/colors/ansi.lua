@@ -162,3 +162,6 @@ hl(0, 'typescriptExceptions', {link = 'Keyword'})
 -- vim.g.terminal_color_13 = '#c678dd'
 -- vim.g.terminal_color_14 = '#56b6c2'
 -- vim.g.terminal_color_15 = '#5c6370'
+
+-- GitSigns
+hl(0, 'GitSignsChange', {link = 'Operator'})
