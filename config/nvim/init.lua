@@ -55,6 +55,10 @@ add({
   depends = { "nvim-lua/plenary.nvim" }
 })
 
+add({
+  source = "lewis6991/gitsigns.nvim"
+})
+
 -- keymaps
 local insert = "i"
 local normal = "n"
@@ -118,6 +122,10 @@ vim.keymap.set(normal, "<leader>ff", telescope.find_files, {
 })
 vim.keymap.set(normal, "<leader>fg", telescope.live_grep, {
   desc = "Telescope live grep"
+})
+
+local gitsigns = require('gitsigns')
+gitsigns.setup({
 })
 
 -- color scheme
