@@ -1,3 +1,4 @@
+tap "nickcharlton/archive"
 tap "slp/krunkit"
 
 brew "bat"
@@ -9,7 +10,7 @@ brew "git-delta"
 brew "git-extras"
 brew "jq"
 brew "krunkit"
-brew "neovim"
+brew "nickcharlton/archive/neovim"
 brew "podman"
 brew "podman-compose"
 brew "python3"
