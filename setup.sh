@@ -17,7 +17,8 @@ if [ "$kernel" = "Linux" ]; then
 		sudo apt-get install -qy rcm
 	fi
 
-	sudo apt-get install -qy neovim python3-pynvim tree tig
+	sudo apt-get install -qy neovim python3-pynvim tree tig \
+		zsh-syntax-highlighting zsh-autosuggestions
 
 	# Fix for Ghostty Terminfo
 	if [ ! -f "/usr/share/terminfo/x/xterm-ghostty" ]; then
