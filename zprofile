@@ -3,3 +3,8 @@
 [ "$(uname -s)" = "Linux" ] && export LINUX=1 && export UNIX=1
 uname -s | grep -q "_NT-" && export WINDOWS=1
 [ "$LINUX" ] && grep -qEi "(Microsoft|WSL)" /proc/version && export WSL=1
+
+  # Homebrew
+if [ -x /opt/homebrew/bin/brew ]; then
+  export HOMEBREW_PREFIX="/opt/homebrew"
+fi
