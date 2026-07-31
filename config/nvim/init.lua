@@ -58,6 +58,9 @@ add({
 add("lewis6991/gitsigns.nvim")
 require('gitsigns').setup()
 
+add("nxhung2304/lastplace.nvim")
+require("lastplace").setup()
+
 -- keymaps
 local insert = "i"
 local normal = "n"
