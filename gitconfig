@@ -1,6 +1,7 @@
 [user]
   name = Nick Charlton
   email = nick@nickcharlton.net
+  signingkey = Nick Charlton <nick@nickcharlton.net>
 [github]
   user = nickcharlton
 [color]
@@ -33,3 +34,7 @@
   enabled = true
 [pull]
   ff = only
+[commit]
+  gpgsign = true
+[tag]
+  gpgSign = true
