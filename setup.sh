@@ -21,6 +21,7 @@ if [ "$kernel" = "Linux" ]; then
 		zsh-syntax-highlighting zsh-autosuggestions
 
 	. scripts/setup-ruby-tools.sh
+	. scripts/setup-node-tools.sh
 	. scripts/setup-k8s-tools.sh
 
 	# Fix for Ghostty Terminfo

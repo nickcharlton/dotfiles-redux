@@ -73,5 +73,13 @@ prompt_ruby_version() {
   print " $(prompt_red "$ruby_version")"
 }
 
+prompt_node_version() {
+  local node_version=$(chnode | sed -n -e 's/ \* //p')
+
+  [[ -z $node_version ]] && return
+
+  print " $(prompt_green "$node_version")"
+}
+
 setopt prompt_subst
-PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)$(prompt_ruby_version)]%# '
+PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)$(prompt_ruby_version)$(prompt_node_version)]%# '

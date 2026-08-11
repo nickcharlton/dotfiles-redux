@@ -13,6 +13,12 @@ load_chruby() {
   load_language_changer_file "chruby" "auto"
 }
 
-load_chruby
+load_chnode() {
+  load_language_changer_file "chnode" "chnode"
+  load_language_changer_file "chnode" "auto"
+}
 
-precmd_functions+=(chruby_auto)
+load_chruby
+load_chnode
+
+precmd_functions+=(chruby_auto chnode_auto)
