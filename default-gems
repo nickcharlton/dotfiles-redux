@@ -1,0 +1,9 @@
+neovim
+rubocop
+rubocop-rails
+rubocop-performance
+solargraph
+solargraph-standardrb
+solargraph-dead_end
+solargraph-rails
+standardrb

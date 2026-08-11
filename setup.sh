@@ -20,6 +20,8 @@ if [ "$kernel" = "Linux" ]; then
 	sudo apt-get install -qy neovim python3-pynvim tree tig \
 		zsh-syntax-highlighting zsh-autosuggestions
 
+	. scripts/setup-ruby-tools.sh
+
 	# Fix for Ghostty Terminfo
 	if [ ! -f "/usr/share/terminfo/x/xterm-ghostty" ]; then
 		sudo apt-get install -qy ncurses-term

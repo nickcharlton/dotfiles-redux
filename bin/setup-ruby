@@ -1,0 +1,26 @@
+#!/bin/zsh -i
+
+while test $# -gt 0; do
+	case $1 in
+		-i | --install)
+		shift
+		ruby="$*"
+		;;
+	*)
+		break
+	;;
+esac
+
+shift
+done
+
+if [ -z "$ruby" ]; then
+	ruby=$*
+fi
+
+ruby-install "$ruby" -- --disable-install-rdoc
+
+load_chruby
+chruby "$ruby"
+
+gem install --no-document $(tr '\n' ' ' < "$HOME/.dotfiles/default-gems")

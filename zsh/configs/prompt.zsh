@@ -64,5 +64,14 @@ function precmd {
 # jobs
 prompt_job_count() { print "$(prompt_blue "%(1j.[%j] .)")" }
 
+# languages
+prompt_ruby_version() {
+  local ruby_version=$(chruby | sed -n -e 's/ \* //p')
+
+  [[ -z $ruby_version || "${ruby_version}" == "system" ]] && return
+
+  print " $(prompt_red "$ruby_version")"
+}
+
 setopt prompt_subst
-PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)]%# '
+PROMPT='$(prompt_job_count)[$(prompt_shortened_path)$(prompt_git_status)$(prompt_ruby_version)]%# '
