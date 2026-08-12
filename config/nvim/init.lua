@@ -13,6 +13,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 2
 vim.opt.undofile = true
+vim.opt.showmode = false
 
 -- plugins
 require("mini.deps").setup()
@@ -53,6 +54,16 @@ require("nvim-treesitter.configs").setup({
 add({
   source = "nvim-telescope/telescope.nvim",
   depends = { "nvim-lua/plenary.nvim" }
+})
+
+add("nvim-lualine/lualine.nvim")
+require("lualine").setup({
+  options = {
+    theme = "jellybeans",
+  },
+  sections = {
+    lualine_c = {'filename', 'lsp_status'}
+  }
 })
 
 add("lewis6991/gitsigns.nvim")
