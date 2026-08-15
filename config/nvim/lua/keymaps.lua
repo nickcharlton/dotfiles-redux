@@ -61,3 +61,5 @@ vim.keymap.set(normal, "<leader>ff", telescope.find_files, {
 vim.keymap.set(normal, "<leader>fg", telescope.live_grep, {
   desc = "Telescope live grep"
 })
+
+vim.keymap.set(normal, '<Leader>t', require('whitespace-nvim').trim)

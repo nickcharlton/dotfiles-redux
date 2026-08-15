@@ -33,3 +33,6 @@ require('gitsigns').setup()
 
 add("nxhung2304/lastplace.nvim")
 require("lastplace").setup()
+
+add("johnfrankmorgan/whitespace.nvim")
+require('whitespace-nvim').setup()
