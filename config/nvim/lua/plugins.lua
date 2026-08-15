@@ -6,6 +6,8 @@ require("mason").setup()
 
 add("neovim/nvim-lspconfig")
 
+add("mason-org/mason-lspconfig.nvim")
+
 add({
   source = "nvim-treesitter/nvim-treesitter",
   checkout = "master"

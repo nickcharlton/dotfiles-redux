@@ -1,5 +1,10 @@
 -- language servers
-vim.lsp.enable({ "lua_ls" })
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "lua_ls"
+  }
+})
+
 vim.diagnostic.config({
   virtual_text = { current_line = true },
   severity_sort = true,
@@ -9,6 +14,22 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.WARN] = '▲',
       [vim.diagnostic.severity.HINT] = '⚑',
       [vim.diagnostic.severity.INFO] = '»',
+    }
+  }
+})
+
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      diagnostics = {
+        globals = { "vim" }
+      }
     }
   }
 })
