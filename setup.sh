@@ -18,7 +18,7 @@ if [ "$kernel" = "Linux" ]; then
 	fi
 
 	sudo apt-get install -qy neovim python3-pynvim tree tig \
-		zsh-syntax-highlighting zsh-autosuggestions
+		zsh-syntax-highlighting zsh-autosuggestions shellcheck
 
 	. scripts/setup-ruby-tools.sh
 	. scripts/setup-node-tools.sh

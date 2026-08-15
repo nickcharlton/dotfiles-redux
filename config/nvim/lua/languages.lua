@@ -1,7 +1,9 @@
 -- language servers
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "lua_ls"
+    "lua_ls",
+    "bashls",
+    "systemd_lsp"
   }
 })
 
